@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-int firstFit(int,int);
 int main(){
   int boxes,count_of_bins=0,temp,i;
   float bincap;
