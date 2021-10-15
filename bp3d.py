@@ -111,7 +111,7 @@ def bp3D(current_bin, box): # (Bin object, box to be packed)
                     ]
                 if current_bin.can_be_packed(box, pivot):
                     current_bin.pack(box, pivot)
-                    return pivot
+                    return pivot #returning the position where box is being placed
 
         return -1 # box cannot be fit 
 
