@@ -46,7 +46,11 @@ Bin packing is one of the most interesting problems in combinatorics. It has mul
 ```sh
 git clone https://github.com/sagarchotalia/Pick-and-Place-Robot-Eklavya.git
 ```
-2. *the ZMQ API files in a folder* (yet to upload)
+2. Clone [this repo.](https://github.com/CoppeliaRobotics/zmqRemoteApi)
+
+4. Go to the CoppeliaSim application. Right click on it and click on ```Show Package Contents```. Navigate to the ```Programming``` folder and paste the cloned repository in it.
+
+5. *further points to be added*
 
 ### Execution
 * Open Spyder IDE using either the directly downloaded application or through Anaconda Navigator.
