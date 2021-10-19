@@ -48,22 +48,28 @@ git clone https://github.com/sagarchotalia/Pick-and-Place-Robot-Eklavya.git
 ```
 2. Clone [this repo.](https://github.com/CoppeliaRobotics/zmqRemoteApi)
 
-4. Go to the CoppeliaSim application. Right click on it and click on ```Show Package Contents```. Navigate to the ```Programming``` folder and paste the cloned repository in it.
+4. Go to the CoppeliaSim application. Right click on it and click on `Show Package Contents`. Navigate to the `Programming` folder and paste the cloned repository in it.
 
-5. Open the ```include``` folder of this repository. Add the ```cbor.lua``` file to your main CoppeliaSim directory(i.e. CoppeliaSim->Show Package Contents->Paste cbor.lua file there).
+5. Open the `include` folder of this repository. Add the `simAddOnZMQ remote API.lua` file to your main CoppeliaSim directory(i.e. CoppeliaSim->Show Package Contents->Paste the file there).
 
-6. Thne
+6. Then navigate to the CoppeliaSim/`lua` folder. Paste the scripts `cbor.lua` and `simZMQ.lua` in them.
+
+7. If there are any files with the same name as the above, simply replace them with the files provided in this repository, otherwise the API will show an error.
+
 
 ### Execution
 * Open Spyder IDE using either the directly downloaded application or through Anaconda Navigator.
 * Open the scene in Coppeliasim. Don't click on the Play icon, the script contains a function that will run the scene for you.
 * Run the *scene.py script* (yet to upload)
 
-*Insert GIF/Image of the overall setup*
+![Screenshot 2021-10-19 at 12 26 01 PM](https://user-images.githubusercontent.com/72294682/137859058-2378f94c-d46c-4b11-b86c-37fe697f598c.png)
+
 
 <!-- RESULTS AND DEMO -->
 ## Results and Demo
 *Add the videos, gifs and other things here*
+
+![gif](https://user-images.githubusercontent.com/72294682/137859720-8dc0fd73-55f4-48ea-990b-08e399e0937e.gif)
 
 <!-- FUTURE WORK -->
 ## Future Work
