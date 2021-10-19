@@ -50,7 +50,9 @@ git clone https://github.com/sagarchotalia/Pick-and-Place-Robot-Eklavya.git
 
 4. Go to the CoppeliaSim application. Right click on it and click on ```Show Package Contents```. Navigate to the ```Programming``` folder and paste the cloned repository in it.
 
-5. *further points to be added*
+5. Open the ```include``` folder of this repository. Add the ```cbor.lua``` file to your main CoppeliaSim directory(i.e. CoppeliaSim->Show Package Contents->Paste cbor.lua file there).
+
+6. Thne
 
 ### Execution
 * Open Spyder IDE using either the directly downloaded application or through Anaconda Navigator.
