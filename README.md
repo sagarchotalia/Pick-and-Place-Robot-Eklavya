@@ -28,9 +28,35 @@ Bin packing is one of the most interesting problems in combinatorics. It has mul
 - [Spyder](https://www.spyder-ide.org/)
 
 ### File Structure
+```sh
 
---------------------
-
+ ┣API Scripts                          #Contain the scripts used to run the scene
+ ┃ ┣scene.py
+ ┃ ┗scene_1.py
+ ┣Algorithms                           #The various algorithms we wrote and tested
+ ┃ ┣1D Algorithms                      #1 Dimensional bin packing algorithms
+ ┃ ┃ ┣BestFitAlgorithm.cpp             
+ ┃ ┃ ┣FirstFitAlgorithm.cpp            
+ ┃ ┃ ┗NextFitAlgorithm.cpp             
+ ┃ ┣2D Algorithms                      #2 Dimensional bin packing algorithms
+ ┃ ┃ ┗ShelfNextFit.cpp
+ ┃ ┗3D Algorithms                      #3 Dimensional bin packing algorithms
+ ┃ ┃ ┣3DBinPacking.py
+ ┃ ┃ ┣3dalgo-dragos.py
+ ┃ ┃ ┗3dalgo-pseudo-initial.py         #Pseudocode used to give the general outline of the algorithm
+ ┣Resources                            #Resources that we referred to throughout the entire project
+ ┃ ┣RectangleBinPack.pdf
+ ┃ ┣erick_dube_507-034.pdf
+ ┃ ┗master_sorset.pdf
+ ┣Scene                                #CoppeliaSim scenes containing the Inverse-Kinematic(IK) set up
+ ┃ ┣EKLAVYA_PICK_PLACE.ttt
+ ┃ ┗coppeliasim_scene.ttt
+ ┣include                              #Essential add-on files needed to run the scene
+ ┃ ┣cbor.lua
+ ┃ ┣simAddOnZmq remote API.lua
+ ┃ ┗simZMQ.lua
+ ┗README.md
+```
 <!-- GETTING STARTED -->
 ## Getting Started
 
