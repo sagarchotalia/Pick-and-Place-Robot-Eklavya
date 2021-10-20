@@ -86,7 +86,7 @@ git clone https://github.com/sagarchotalia/Pick-and-Place-Robot-Eklavya.git
 ### Execution
 * Open Spyder IDE using either the directly downloaded application or through Anaconda Navigator.
 * Open the scene in Coppeliasim. Don't click on the Play icon, the script contains a function that will run the scene for you.
-* Run the *scene.py script* (yet to upload)
+* Run the `scene.py` script
 
 ![Screenshot 2021-10-19 at 12 26 01 PM](https://user-images.githubusercontent.com/72294682/137859058-2378f94c-d46c-4b11-b86c-37fe697f598c.png)
 
