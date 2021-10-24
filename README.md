@@ -112,20 +112,22 @@ In the script, first we connect with the ZeroMQ API at port 23000. Then, the obj
 ![Flowchart](https://user-images.githubusercontent.com/74896007/138588431-37144891-8cab-4aec-ba02-f05c8a8b598b.png)
 
 ### Link to Project Report
-[Project Report]
+[Project Report](https://docs.google.com/document/d/1txoOz33IaBZjSIHfNyIviBPgDyPdN93gMFWjdAiwCmc/edit?usp=sharing)
 
 <!-- RESULTS AND DEMO -->
 ## Results and Demo
 
-![Video](https://user-images.githubusercontent.com/74896007/138588492-3158d8be-6ca7-4847-a6d8-546c2d4bc5e3.mp4)
+![Ortho_view](https://user-images.githubusercontent.com/74896007/138589116-f5a653d2-310c-4c60-bc80-b79055fb11ef.gif)
 
 <!-- FUTURE WORK -->
 ## Future Work
-- [ ] Integrate and test the bin packing algorithm with the scene
 - [ ] Add the feature of rotation of boxes for more efficient packing
+- [ ] Improve and test approaches to Bin Packing Algorithm
+- [ ] Improve Simulation by using Suction Pad for picking boxes, Trajectory Planning 
 
 ## Troubleshooting
-
+* Refer [CoppeliaSim Documentation](https://www.coppeliarobotics.com/helpFiles/en/zmqRemoteApiOverview.htm) for ZMQ API.
+* Check for NumPY and OpenCV installation.
 
 <!-- CONTRIBUTORS -->
 ## Contributors
