@@ -11,7 +11,7 @@ There was also a blank that said "Mention other project topics, if any, that you
 
 Me and Ayush were separately interested in certain topics, and commonly interested in other ones; so we filled that blank out by our own choices. To make it short, we ended up writing the same (or at least similar) topics; a pick and place robot that could move.
 
-SRA is thorough in their practices. They conducted a final interview before the actual project began, to gauge interest in the topic. In that interview, our seniors offered the project that they'd been working on; the one that had won them [2nd Prize Internationally in the Delta Cup](https://www.youtube.com/watch?v=JBdjbeT3EMY), which was an absolute honour for us.
+SRA is thorough in their selection and review process. They conducted a final interview before the actual project began, to gauge interest in the topic. In that interview, our seniors offered the project that they'd been working on; the one that had won them [2nd Prize Internationally in the Delta Cup](https://www.youtube.com/watch?v=JBdjbeT3EMY), which was an absolute honour for us.
 
 And thus began our journey.
 ## Algorithm Writing
@@ -25,7 +25,7 @@ Bin packing in two dimensions requires a bit more thinking. You need to decide w
 
 (I highly suggest you read about first fit, next fit and worst fit algorithms as well)
 
-There are also 2-dimensional guillotine algorithms. The name must remind you of the French King Louis XVI and Queen Marie Antoinette being executed, but worse than that, it must be giving you flashbacks of what life used to be like when you were 15. Ah, bliss.
+There are also 2-dimensional guillotine algorithms which are quite interesting(The name must remind you of the French King Louis XVI and Queen Marie Antoinette being executed, but worse than that, it must be giving you flashbacks of what life used to be like when you were 15 and your biggest problem in life was Social Studies. Ah, bliss.).
 
 Moving on.
 
@@ -40,13 +40,14 @@ Our seniors generously provided us a scene in CoppeliaSim, which is a great soft
 We played around with it a bit, changing the values of the conveyor velocity, trying to get the boxes to be picked, trying to read the box dimensions using a vision sensor and so on.
 But, we were facing issues. 
 
-((**name issues here**))
-
-Hence, we saw the implementation of a scene in Inverse Kinematics Mode(or IK Mode). The name is quite intimidating, but honestly, the concept is pretty simple. 
+The thing is, if you have a robot or any object in CoppeliaSim, and you're just horsing around, then you don't need to worry. *However*, if you're going to need the tip of the robot to be at a certain position, or move from its default position to a certain point, or anything similar to that, what you'll need is Inverse Kinematics. The name is quite intimidating, but honestly, the concept is pretty simple. Simply put, 
 > Inverse Kinematics involves the description of a point in space in order to calculate the joint position and orientation of a robot in order to reach it.
 
-So, we read about the setting up of a scene in IK Mode and implemented it in CoppeliaSim. We faced a few small but surmountable difficulties in our way, but once we were
-done with it, it helped us an awful lot with our progress.
+Hence, we now had to see the implementation of a scene in Inverse Kinematics Mode(or IK Mode).
+
+As you may have guessed, when you're given just a point in space with nothing else but the constraints of the joints, the calculations required to actually figure out the angles and joint coordinates get pretty complex(Googling those formulae does not help).
+
+So, we read about the setting up of a scene in IK Mode and implemented it in CoppeliaSim. We faced a few small but surmountable difficulties in our way, but once we were done with it, it helped us an awful lot with our progress.
 ## Problems faced with Regular API
 Well, we first tried using the regular API that comes with CoppeliaSim. However, that had to be written in Lua, which is a programming language we both were
 not familiar with. Writing the API script in Python would offer more documentation with integration of OpenCV, plus we were more familiar with Python.
@@ -56,7 +57,7 @@ So, we switched to the Remote API which could be written in Python. Most functio
 The problem was that, our scene was in the IK Mode, however this remote API didn't provide IK functionality. So, we had to switch to a different API, the ZeroMQ API.
 ## The ZeroMQ API
 
-CoppeliaSim offers several ways to communicate with the actual scene and control the scene elements viz,signals (blocks of data), calling script functions and API functions. 
+CoppeliaSim offers several ways to communicate with the actual scene and control the scene elements viz, signals (blocks of data), calling script functions and API functions. 
 
 API functions are really useful as they allow us to perform the above task in a language of our choice like Python or Matlab.
 The ZeroMQ (ZMQ) API is one such API supported by CoppeliaSim starting from v4.2. It offers all API functions also available via a CoppeliaSim script: this includes all regular API functions (i.e. sim.* -type functions), but also all API functions provided by plugins (e.g. simOMPL.*, simUI.*, simIK.*, etc.). The ZeroMQ-based remoteAPI can be used in the exact same way as from within a CoppeliaSim script.
@@ -144,14 +145,6 @@ The return value is :
 - 0 if the operation could not be performed, and
 - greater than 0 in case of success.
 
-## Resources/References
-| Description | Link |
-| ------ | ------ |
-| Example API Scripts | [zmqRemoteApi](https://github.com/CoppeliaRobotics/zmqRemoteApi/tree/master/clients/python) folder |
-| Regular API Functions | [CoppeliaSim Manual ](https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm) |
-| ZMQ API | [ZMQ Coppelia Manual](https://www.coppeliarobotics.com/helpFiles/en/zmqRemoteApiOverview.htm) |
-| CoppeliaSim Forum | [CoppeliaSim Forum](https://forum.coppeliarobotics.com/) |
-
 ## Object Detection
 
 To detect the object and determine its dimensions we used two [vision sensors](https://www.coppeliarobotics.com/helpFiles/en/visionSensorPropertiesDialog.htm) (one for determining the x and y dimensions and other for the z dimensions)  and [OpenCV](https://pypi.org/project/opencv-python/) library. 
@@ -183,6 +176,16 @@ Whenever the points of the bounding rectangle of the box  are not at the exact b
 <p align="center">
   <img src="https://user-images.githubusercontent.com/74896007/143063396-fee7accd-dff2-41ca-889e-acb29ff61e47.jpg">
 </p>
+
+## Resources and References
+Here are some of the resources we used for this project.
+| Description | Link |
+| ------ | ------ |
+| Example API Scripts | [zmqRemoteApi](https://github.com/CoppeliaRobotics/zmqRemoteApi/tree/master/clients/python) folder |
+| Regular API Functions | [CoppeliaSim Manual ](https://www.coppeliarobotics.com/helpFiles/en/apiFunctions.htm) |
+| ZMQ API | [ZMQ Coppelia Manual](https://www.coppeliarobotics.com/helpFiles/en/zmqRemoteApiOverview.htm) |
+| CoppeliaSim Forum | [CoppeliaSim Forum](https://forum.coppeliarobotics.com/) |
+| Research Papers | [Research Papers](https://github.com/sagarchotalia/Pick-and-Place-Robot-Eklavya/tree/main/Algorithm/Resources)|
 
 ## Conclusion
 
