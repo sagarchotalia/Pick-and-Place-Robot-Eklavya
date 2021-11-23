@@ -1,4 +1,4 @@
-# Eklavya: A look into the Journey of replicating an Award-Winning Robot
+# Eklavya: The Journey behind Simulating a Bin-Packing Pick-and-Place Robot
 
 ## Introduction
 These 6 weeks of Eklavya proved to be a great challenge for Ayush and me, as we struggled to get our concepts down, learn an entirely new software, implement connection with API's, code, resolve some really complex problems, code some more... you get the idea.
@@ -48,8 +48,13 @@ Hence, we saw the implementation of a scene in Inverse Kinematics Mode(or IK Mod
 So, we read about the setting up of a scene in IK Mode and implemented it in CoppeliaSim. We faced a few small but surmountable difficulties in our way, but once we were
 done with it, it helped us an awful lot with our progress.
 ## Problems faced with Regular API
-- mention the problems faced here
-## Switching to ZeroMQ API
+Well, we first tried using the regular API that comes with CoppeliaSim. However, that had to be written in Lua, which is a programming language we both were
+not familiar with. Writing the API script in Python would offer more documentation with integration of OpenCV, plus we were more familiar with Python.
+
+So, we switched to the Remote API which could be written in Python. Most functions were really useful there, like the ```sim``` functions. We tried writing the script in this version of the API, but we ran into a problem.
+
+The problem was that, our scene was in the IK Mode, however this remote API didn't provide IK functionality. So, we had to switch to a different API, the ZeroMQ API.
+## The ZeroMQ API
 
 CoppeliaSim offers several ways to communicate with the actual scene and control the scene elements viz,signals (blocks of data), calling script functions and API functions. 
 
@@ -178,3 +183,9 @@ Whenever the points of the bounding rectangle of the box  are not at the exact b
 <p align="center">
   <img src="https://user-images.githubusercontent.com/74896007/143063396-fee7accd-dff2-41ca-889e-acb29ff61e47.jpg">
 </p>
+
+## Conclusion
+
+There was so much more to Eklavya than what could be summed up in this blog. The technical aspect of it may have been summarized, but our learning experience, the challenges, frustration, disappointment, perseverence and so much more behind the scenes can't be explained fully. 
+
+Eklavya truly was an amazing mentorship program and it got us all skilled in certain aspects; not just the technical ones, but also sticking to deadlines, clearing doubts and issues, and, no matter what, to **_keep learning as much as possible._**
