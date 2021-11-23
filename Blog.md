@@ -147,3 +147,34 @@ The return value is :
 | ZMQ API | [ZMQ Coppelia Manual](https://www.coppeliarobotics.com/helpFiles/en/zmqRemoteApiOverview.htm) |
 | CoppeliaSim Forum | [CoppeliaSim Forum](https://forum.coppeliarobotics.com/) |
 
+## Object Detection
+
+To detect the object and determine its dimensions we used two [vision sensors](https://www.coppeliarobotics.com/helpFiles/en/visionSensorPropertiesDialog.htm) (one for determining the x and y dimensions and other for the z dimensions)  and [OpenCV](https://pypi.org/project/opencv-python/) library. 
+
+Remember to install Opencv and NumPy.
+
+The image is provided continuously by the vision sensors. 
+```sh
+img, resX, resY = sim.getVisionSensorCharImage(visionSensorHandle_xy) 
+```
+
+Upon receiving an image, it is converted to gray scale and [binary thresholding](https://docs.opencv.org/3.4/d7/d4d/tutorial_py_thresholding.html) is applied. Then the boundary in the image is calculated, this done by contours. Contours can be explained simply as a curve joining all the continuous points (along the boundary), having the same color or intensity. A bounding rectangle is created for the contour that is created. 
+```py
+img = cv2.cvtColor(np.frombuffer(img, dtype=np.uint8).reshape(resY, resX, 3),cv2.COLOR_BGR2GRAY)
+ _,threshold= cv2.threshold(img,100,255,cv2.THRESH_BINARY)
+ contours,_ = cv2.findContours(threshold,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+```
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74896007/143065811-730f9cfb-f6e5-4e99-8cee-d01a92c6f4ee.png">
+</p>
+
+Whenever the points of the bounding rectangle of the box  are not at the exact boundary of the image captured by the camera , at that instance the dimensions of the rectangle are stored in pixels. This is to validate if the box is completely under the frame. The length, width and depth that are stored in pixels are converted to actual dimensions in metres by using the conversion factor. 
+
+```py
+  if(contour_y_coordinate>0&contour_prev_y_coordinate==0):
+        length=round(((length/resY)*image_ortho_size_xy),2)
+        width=round(((width/resX)*(image_ortho_size_xy/2)),2)
+```
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74896007/143063396-fee7accd-dff2-41ca-889e-acb29ff61e47.jpg">
+</p>
