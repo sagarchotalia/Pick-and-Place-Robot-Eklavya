@@ -65,12 +65,9 @@ In our simulation, we wanted to implement inverse kinematics in python along wit
 
 In order to use the ZMQ API, we must download certain files and add them to the CoppeliaSim package contents. The instructions on how to do this are mentioned in detail on the [CoppeliaRobotics website](https://www.coppeliarobotics.com/helpFiles/en/zmqRemoteApiOverview.htm)
 
-Next, we need an environment where we can write the actual scripts that will connect to the scene. For our purposes, [Spyder](https://www.spyder-ide.org/) is more than sufficient. After this, run these commands in the Spyder Terminal:
+Next, we need an environment where we can write the actual scripts that will connect to the scene. For our purposes, [Spyder](https://www.spyder-ide.org/) is more than sufficient.
 
-`pip install pyzmq`
-
-`pip install cbor`
-- Once this is done we are ready to write the code to control the simulation scene. 
+Once the set-up is done we are ready to write the code to control the simulation scene. 
 
 ## Writing Python Scripts for Simulation
 
