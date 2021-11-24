@@ -179,6 +179,9 @@ When the vision sensor detects a box at point 1,
 
 The coordinates of point 4, which is actually inside the box, are determined using the Bin Packing Algorithm.
 
+## Final Result
+![Final_Result](https://user-images.githubusercontent.com/74896007/143289518-3cfaa97f-30e9-47fa-bcab-fb65b8a7c289.gif)
+
 
 ## Resources and References
 Here are some of the resources we used for this project.
